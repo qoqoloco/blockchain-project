@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css " integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="{% static 'bootstrap4.css' %}">
+    <title></title>
+  </head>
+  <body>
+    <nav  id="nad" class="navbar navbar-default bg-dark" >
+<ul class="nav">
+  <li class="navbar-brand"><a id="na"  href="{% url 'base' %}">Registration</a></li>
+  <li class="navbar-brand"><a id="na"   href="{% url 'index' %}">index</a></li>
+
+</ul>
+
+
+      </nav>
+    <h1>work</h1>
+
+
+{% block cont %}
+<!-- {% crispy form %} -->
+<div align="center">
+
+
+<form class=" " method="post" >
+  {% csrf_token %}
+  <div align="center">
+    <h2>register hear </h2>
+  <div class="form-group">
+  <label for="name" class="">name</label>
+  <div class="col-sm-3">
+    <h4 class="" id="name" >{{form.name}}</h4>
+  </div>
+  </div>
+<div class="">
+<label for="em" class="">Email</label>
+<div class="col-sm-3">
+
+   <h4 class="" id="em">{{form.email}}</h4> 
+</div>
+</div>
+
+
+<div class="form-group">
+<label for="pon" class="col-sm-2 control-label">phone</label>
+<div class="col-sm-3">
+  <h4 class="" id="pon">{{form.phone}}</h4>
+</div>
+</div>
+
+</div>
+
+
+
+<div class="form-group">
+<div class="col-sm-offset-2 col-sm-10">
+  <button type="submit" class="btn btn-success">Sign in</button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+
+
+
+{% endblock %}
+
+
+
+  </body>
+</html>

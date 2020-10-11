@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block cont %}
+
+<table align='center'>
+  <thead>
+    <th>name</th>
+    <th>email</th>
+    <th>phone number</th>
+    <th>id</th>
+    <th>primmary_key</th>
+</thead>
+
+    {% for i in info %}
+    <tr>
+
+
+    <td><a href="{% url 'page' id=i.id %}">{{i.name}}</a></td>
+    <td>{{i.email}}</td>
+    <td>{{i.phone}}</td>
+    <td>{{i.id}}</td>
+    <td>{{i.pk}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+<style media="screen">
+  td,tr,th{
+    border: 3px solid black;
+  }
+table{
+  width:700px;
+  height: 200px;
+}
+</style>
+
+
+{% endblock %}
